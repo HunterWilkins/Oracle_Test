@@ -1,0 +1,114 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width:80%;
+    margin:0 auto;
+    background-color:rgb(35, 28, 27);
+    color:goldenrod;
+}
+
+header{
+    padding:15px;
+    width:100%;
+    text-align:center;
+}
+
+header hr{
+    border-bottom:none;
+    border-color:rgb(157, 89, 17);
+    border-style:solid;
+    border-width:1px;
+    width:85%;
+}
+
+header h1, h2, h3{
+    margin-top:10px;
+}
+
+header h1{
+    color:rgb(241, 212, 46);
+    font-size:32px;
+    text-shadow:0px 0px 5px goldenrod;
+}
+
+header h2{
+    margin-top:20px;
+    font-size:20px;
+}
+
+header p{
+    font-style:italic;
+    color:darkgoldenrod;
+}
+
+.content {
+    width:100%;
+}
+
+.game-area{
+    position:relative;
+    box-sizing:border-box;
+    width:100%;
+
+    padding:15px;
+    text-align:center;
+
+    background-color:rgb(19, 16, 14);
+    border-radius:5px;
+    border-color:inherit;
+    border-style:solid;
+}
+
+.stats{
+    font-style:italic;
+    text-align:left;
+    
+    margin:auto;
+
+    background-color:rgb(35, 28, 27);
+    box-shadow:0px 5px black;
+    
+    padding:10px 40px 10px 10px;
+    border-radius:5px;
+    border-color:inherit;
+    border-style:solid;
+}
+
+.stats p {
+    margin-top:5px;
+}
+
+#triumphs-num{
+    color:lightgreen;
+    text-shadow:0 0 5px lightgreen;
+}
+
+#failures-num{
+    color:red;
+    text-shadow:0 0 5px red;
+}
+
+/* just testing some animation here */
+/* 
+@keyframes woohoo{
+    0% {
+        opacity:0;
+        }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+#woohoo{
+    float:right;
+    animation-name:woohoo;
+    animation-duration:4s;
+    font-size:20px;
+} */
