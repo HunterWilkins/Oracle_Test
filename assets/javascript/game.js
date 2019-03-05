@@ -1,7 +1,7 @@
 
 
 
-var computerChoices = ("a b c d e f g h i j k l f o p q r s t u v w x y z").split(" ");
+var computerChoices = ("abcdefghijklmnopqrstuvwxyz").split("");
 
 var totalFailures = 0;
 var wins = 1;
@@ -15,29 +15,49 @@ function gameRun(){
 
     document.onkeyup= function(event){
         var userGuess = event.key;
-        if (wrongs < 10) {
-    
-            if (userGuess === computerGuess){
-                document.getElementById("triumphs-num").innerHTML = wins++;
-                
-                alert("YOU WOOON!");
-                gameRun();
-            }
-            else {
-                wrongs++;
-                if (guesses.indexOf(userGuess) === -1 || (guesses.length < 1)){
-                    guessesLeft--;
-                    guesses.push(userGuess);
+        if (computerChoices.indexOf(userGuess) === -1){
+            alert("Type a letter of the alphabet." +computerGuess);
+        }
+        else{
 
-                    document.getElementById("guesses-left").innerHTML =  guessesLeft;
-                    document.getElementById("letters-guessed").innerHTML = guesses;
+            if (wrongs < 10) {
+        
+                if (userGuess === computerGuess){
+                    if (wins < 2){
+                        alert("You have passed the Oracle's test!");
+                        alert("Now take it again!");
+                        alert("FoRreEeeEvEErerRr!!!");
+                    }
+                    else {
+                        alert ("SUCCESS");
+                    }
+                    document.getElementById("title").innerHTML = "There's No End";
+                    document.getElementById("subtitle").innerHTML = "~ to your examination ~";
+
+                    document.getElementById("triumphs-num").innerHTML = wins++;
+                    
+                    
+                    gameRun();
+                }
+                else {
+                    
+                    if (guesses.indexOf(userGuess) === -1 || (guesses.length < 1)){
+                        wrongs++;
+                        guessesLeft--;
+                        guesses.push(userGuess);
+                        
+
+                        document.getElementById("guesses-left").innerHTML =  guessesLeft;
+                        document.getElementById("letters-guessed").innerHTML = guesses;
+                    }
                 }
             }
-        }
-        else {
-            totalFailures++;
-            document.getElementById("failures-num").innerHTML = totalFailures;            
-            gameRun();
+            else {
+                alert("You have failed the Oracle's test. Try again.");
+                totalFailures++;
+                document.getElementById("failures-num").innerHTML = totalFailures;            
+                gameRun();
+            }
         }
     }
 }
